@@ -25,6 +25,7 @@ ARG GITHUB_ACCOUNT=cesarjorgemartinez
 ARG GITHUB_REPOSITORY=fiware-pep-steelskin
 ARG DOWNLOAD=latest
 ARG SOURCE_BRANCH=master
+ARG PM2_VERSION=5.2.0
 
 # Copying Build time arguments to environment variables so they are persisted at run time and can be 
 # inspected within a running container.
@@ -84,7 +85,9 @@ RUN \
 	# Ensure that Git is installed prior to running npm install
 	apt-get update && \
 	apt-get install -y git && \
-	echo "INFO: npm install --omit=dev..." && \
+	echo "INFO: Install pm2 ${PM2_VERSION}" && \
+	npm install --omit=dev pm2@${PM2_VERSION} -g --no-package-lock --no-optional
+	echo "INFO: npm install --omit=dev" && \
 	npm install --omit=dev && \
 	npm list --omit=dev -a && \
 	# Remove Git and clean apt cache
