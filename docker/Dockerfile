@@ -21,7 +21,7 @@
 
 ARG NODE_VERSION=16-slim
 FROM node:${NODE_VERSION}
-ARG GITHUB_ACCOUNT=telefonicaid
+ARG GITHUB_ACCOUNT=cesarjorgemartinez
 ARG GITHUB_REPOSITORY=fiware-pep-steelskin
 ARG DOWNLOAD=latest
 ARG SOURCE_BRANCH=master
