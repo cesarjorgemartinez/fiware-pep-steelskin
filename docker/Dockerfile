@@ -86,7 +86,7 @@ RUN \
 	apt-get update && \
 	apt-get install -y git && \
 	echo "INFO: Install pm2 ${PM2_VERSION}" && \
-	npm install --omit=dev pm2@${PM2_VERSION} -g --no-package-lock --no-optional && \
+	npm install --omit=dev --omit=optional pm2@${PM2_VERSION} -g --no-package-lock && \
 	echo "INFO: npm install --omit=dev" && \
 	npm install --omit=dev && \
 	npm list --omit=dev -a && \
