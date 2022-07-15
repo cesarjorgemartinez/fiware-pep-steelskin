@@ -84,8 +84,9 @@ RUN \
 	# Ensure that Git is installed prior to running npm install
 	apt-get update && \
 	apt-get install -y git && \
-	echo "INFO: npm install --production..." && \
-	npm install --production && \
+	echo "INFO: npm install --omit=dev..." && \
+	npm install --omit=dev && \
+	npm list --omit=dev -a && \
 	# Remove Git and clean apt cache
 	apt-get clean && \
 	apt-get remove -y git && \
