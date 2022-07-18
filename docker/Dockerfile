@@ -91,6 +91,8 @@ RUN \
 	npm install --omit=dev --no-package-lock && \
 	npm list --omit=dev -a && \
 	ls -la && \
+	node --version && \
+	npm --version && \
 	# Remove Git and clean apt cache
 	apt-get clean && \
 	apt-get remove -y git && \
