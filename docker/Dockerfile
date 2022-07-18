@@ -85,7 +85,7 @@ RUN \
 	# Ensure that Git is installed prior to running npm install
 	apt-get update && \
 	apt-get install -y git && \
-	echo "INFO: npm install --location=global --omit=dev --omit=optional pm2@${PM2_VERSION} --no-package-lock && \
+	echo "INFO: npm install --location=global --omit=dev --omit=optional pm2@${PM2_VERSION} --no-package-lock" && \
 	npm install --location=global --omit=dev --omit=optional pm2@${PM2_VERSION} --no-package-lock && \
 	echo "INFO: npm install --omit=dev --no-package-lock" && \
 	npm install --omit=dev --no-package-lock && \
