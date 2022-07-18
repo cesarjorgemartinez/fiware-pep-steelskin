@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
-logger = require('logops');
+'use strict';
+
+var logger = require('logops');
 var proxy = require('../lib/fiware-pep-steelskin'),
     config = require('../config'),
     middlewareConfigs = {
