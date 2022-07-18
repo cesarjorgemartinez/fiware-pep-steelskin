@@ -87,7 +87,7 @@ RUN \
 	apt-get install -y git && \
 	echo "INFO: npm install --location=global --omit=dev --omit=optional pm2@${PM2_VERSION} --no-package-lock && \
 	npm install --location=global --omit=dev --omit=optional pm2@${PM2_VERSION} --no-package-lock && \
-	echo "INFO: npm install --omit=dev" --no-package-lock && \
+	echo "INFO: npm install --omit=dev --no-package-lock" && \
 	npm install --omit=dev --no-package-lock && \
 	npm list --omit=dev -a && \
 	ls -la && \
