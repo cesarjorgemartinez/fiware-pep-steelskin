@@ -187,7 +187,4 @@ function handleShutdown(signal) {
     });
 }
 
-process.on('SIGINT', handleShutdown);
 process.on('SIGTERM', handleShutdown);
-process.on('SIGHUP', handleShutdown);
-
