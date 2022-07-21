@@ -44,16 +44,16 @@ file_env() {
 }
 
 
-if [[  -z "$PM2_ENABLED" ]]; then
+if [[ "${PM2_ENABLED,,}" != "true" ]]
+then
     echo "INFO: Pep running standalone"
-    if [ -n "$INSPECT_ENABLED" ] && [ "$INSPECT_ENABLED" = true  ]; then
-        node --inspect-brk=0.0.0.0 /opt/fiware-pep-steelskin/bin/pepProxy
-    else
-        node /opt/fiware-pep-steelskin/bin/pepProxy
-    fi
+    node "${NODE_ARGS}" /opt/fiware-pep-steelskin/bin/pepProxy
 else
     echo "***********************************************"
     echo "INFO: Pep encapsulated by pm2-runtime see https://pm2.io/doc/en/runtime/integration/docker/"
     echo "***********************************************"
-    pm2-runtime /opt/fiware-pep-steelskin/bin/pepProxy
+    # See https://github.com/Unitech/pm2/issues/3509 to pass parameters to application.
+    # Example pm2-runtime --node-args="${NODE_ARGS}" /opt/fiware-pep-steelskin/bin/pepProxy -- --param1=xyz.
+    pm2-runtime --node-args="${NODE_ARGS}" /opt/fiware-pep-steelskin/bin/pepProxy
 fi
+

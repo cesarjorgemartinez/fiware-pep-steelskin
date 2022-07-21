@@ -118,10 +118,16 @@ your dockerized environment is already configured to restart Node.js processes w
 
 ### Using Node Inspection
 
-The PEP within the Docker image can be run with [node inspection](https://nodejs.org/en/docs/guides/debugging-getting-started/) by adding the `INSPECT_ENABLED` environment variable.
+The PEP within the Docker image can be run with [node inspection](https://nodejs.org/en/docs/guides/debugging-getting-started/) by setting the `NODE_OPTIONS` node environment variable or using as argument by setting the `NODE_ARGS' own environment variable (ex: node --inspect app.js, node --inspect-brk app.js). We recommended the use of `NODE_ARGS` because `NODE_OPTIONS` sometimes not recognize all values.
+
+Examples:
 
 ```console
-docker run --name pep -e INSPECT_ENABLED=true -d fiware/fiware-pep-steelskin
+docker run --name pep -e NODE_OPTIONS=--inspect-brk -d fiware/fiware-pep-steelskin
+```
+
+```console
+docker run --name pep -e NODE_ARGS=--inspect -d fiware/fiware-pep-steelskin
 ```
 
 Use of node inspection is **disabled** by default.
