@@ -47,7 +47,7 @@ file_env() {
 if [[ "${PM2_ENABLED,,}" != "true" ]]
 then
     echo "INFO: Pep running standalone"
-    node "${NODE_ARGS}" /opt/fiware-pep-steelskin/bin/pepProxy
+    node ${NODE_ARGS} /opt/fiware-pep-steelskin/bin/pepProxy
 else
     echo "***********************************************"
     echo "INFO: Pep encapsulated by pm2-runtime see https://pm2.io/doc/en/runtime/integration/docker/"
