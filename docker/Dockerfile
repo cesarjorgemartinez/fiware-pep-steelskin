@@ -54,8 +54,8 @@ ENV DOWNLOAD=${DOWNLOAD}
 RUN apt-get update && \
 	# Install security updates
 	apt-get upgrade -y && \
-	# Ensure that unzip, wget and curl are installed
-	apt-get install -y --no-install-recommends unzip ca-certificates curl wget && \
+	# Ensure that unzip, wget and curl are installed and procps for PM2 to prevent PM2 error: Error: spawn ps ENOENT
+	apt-get install -y --no-install-recommends unzip ca-certificates curl wget procps && \
 	if [ "${DOWNLOAD}" = "latest" ] ; \
 	then \
 		RELEASE="${SOURCE_BRANCH}"; \
