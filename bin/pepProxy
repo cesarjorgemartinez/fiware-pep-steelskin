@@ -2,10 +2,11 @@
 
 'use strict';
 
-var logger = require('logops');
-var proxy = require('../lib/fiware-pep-steelskin'),
-    config = require('../config'),
-    middlewareConfigs = {
+const logger = require('logops');
+const proxy = require('../lib/fiware-pep-steelskin'),
+    config = require('../config');
+
+var middlewareConfigs = {
         orion: {
             require: 'lib/plugins/orionPlugin',
 
