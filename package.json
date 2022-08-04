@@ -1,7 +1,7 @@
 {
   "name": "fiware-pep-steelskin",
   "description": "FIWARE Policy Enforcement Point",
-  "version": "1.16.0_cjmm",
+  "version": "1.16.1_cjmm",
   "homepage": "https://github.com/cesarjorgemartinez/fiware-pep-steelskin",
   "author": {
     "name": "Daniel Moran",
