@@ -2,11 +2,10 @@
 
 'use strict';
 
-const logger = require('logops');
-const proxy = require('../lib/fiware-pep-steelskin'),
-    config = require('../config');
-
-var middlewareConfigs = {
+const logger = require('logops'),
+    proxy = require('../lib/fiware-pep-steelskin'),
+    config = require('../config'),
+    middlewareConfigs = {
         orion: {
             require: 'lib/plugins/orionPlugin',
 
@@ -40,7 +39,7 @@ var middlewareConfigs = {
 var proxyLocalObj;
 
 function loadConfiguration() {
-    var environmentValues = [
+    const environmentValues = [
         'PROXY_PORT',
         'TARGET_HOST',
         'TARGET_PORT',
