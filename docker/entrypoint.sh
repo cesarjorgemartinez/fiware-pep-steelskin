@@ -43,6 +43,8 @@ file_env() {
         unset "$fileVar"
 }
 
+# define a gc interval
+export NODE_ARGS="--gc-interval=10000"
 
 if [[ "${PM2_ENABLED,,}" != "true" ]]
 then
