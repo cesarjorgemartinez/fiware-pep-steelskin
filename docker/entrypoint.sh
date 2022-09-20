@@ -52,8 +52,7 @@ else
     echo "***********************************************"
     echo "INFO: Pep encapsulated by pm2-runtime see https://pm2.io/doc/en/runtime/integration/docker/"
     echo "***********************************************"
-    # See https://github.com/Unitech/pm2/issues/3509 to pass parameters to application.
-    # Example pm2-runtime --node-args="${NODE_ARGS}" /opt/fiware-pep-steelskin/bin/pepProxy -- --param1=xyz.
-    pm2-runtime --node-args="${NODE_ARGS}" /opt/fiware-pep-steelskin/bin/pepProxy
+    # Example pm2-runtime start /opt/fiware-pep-steelskin/bin/pepProxy --node-args="${NODE_ARGS}" -- --paramforprocess1=xyz
+    pm2-runtime /opt/fiware-pep-steelskin/bin/pepProxy --node-args="${NODE_ARGS}"
 fi
 
