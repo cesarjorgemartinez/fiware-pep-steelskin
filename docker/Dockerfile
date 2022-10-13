@@ -25,7 +25,7 @@ ARG GITHUB_ACCOUNT=cesarjorgemartinez
 ARG GITHUB_REPOSITORY=fiware-pep-steelskin
 ARG DOWNLOAD=latest
 ARG SOURCE_BRANCH=master
-ARG PM2_VERSION=5.2.0
+ARG PM2_VERSION=5.2.2
 
 # Copying Build time arguments to environment variables so they are persisted at run time and can be 
 # inspected within a running container.
